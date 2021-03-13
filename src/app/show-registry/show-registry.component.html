@@ -1,0 +1,29 @@
+<div class="form-inline my-lg-0 m-3 p-3">
+    <input class="form-control mr-sm-2" placeholder="CPF" [(ngModel)]="cpf" aria-label="Search" required>
+    <button class="btn btn-primary" (click)="findCalculationsByCpf()">Buscar</button>
+</div>
+
+<div *ngIf="data" class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">CPF</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Altura</th>
+                <th scope="col">Peso</th>
+                <th scope="col">IMC</th>
+                <th scope="col">Criado em</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let registry of data">
+                <td>{{ registry.cpf }}</td>
+                <td>{{ registry.name }}</td>
+                <td>{{ registry.height }}</td>
+                <td>{{ registry.weight }}</td>
+                <td>{{ registry.imc }}</td>
+                <td>{{ registry.created_at }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

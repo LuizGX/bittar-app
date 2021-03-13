@@ -1,0 +1,19 @@
+<div class="m-3 p-3">
+    <h1>Registrar Novo IMC</h1>
+    <hr>
+    <form [formGroup]="imcForm" class="form-inline my-lg-0" (ngSubmit)="saveIMC()">
+        <input class="form-control mr-sm-2" type="search" placeholder="Nome" formControlName="name" aria-label="Search">
+        <input class="form-control mr-sm-2" type="search" placeholder="CPF" formControlName="cpf" aria-label="Search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Altura (cm)" formControlName="height"
+            aria-label="Search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Peso (Kg)" formControlName="weight"
+            aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Salvar</button>
+    </form>
+
+    <hr>
+
+    <div *ngIf="result">
+        <h2> {{ result }} </h2>
+    </div>
+</div>
